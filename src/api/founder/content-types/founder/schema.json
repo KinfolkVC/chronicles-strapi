@@ -4,7 +4,8 @@
   "info": {
     "singularName": "founder",
     "pluralName": "founders",
-    "displayName": "Founder"
+    "displayName": "Founder profiles",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,45 @@
     },
     "description": {
       "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mainContent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "embeddedImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "linkToOriginalArticle": {
+      "type": "string"
     }
   }
 }

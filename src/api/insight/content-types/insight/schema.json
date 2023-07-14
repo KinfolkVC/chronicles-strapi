@@ -17,6 +17,43 @@
     },
     "description": {
       "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mainContent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "embeddedImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "linkToOriginalArticle": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

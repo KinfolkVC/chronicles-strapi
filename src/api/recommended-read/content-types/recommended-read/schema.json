@@ -43,7 +43,7 @@
         "audios"
       ]
     },
-    "originalArticle": {
+    "linkToOriginalArticle": {
       "type": "string"
     },
     "slug": {
