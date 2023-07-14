@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "arts",
+  "collectionName": "news",
   "info": {
-    "singularName": "art",
-    "pluralName": "arts",
-    "displayName": "Art",
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "News",
     "description": ""
   },
   "options": {
@@ -22,31 +22,26 @@
       "type": "date"
     },
     "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "mainContent": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
+      ]
     },
     "embeddedImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "linkToOriginalArticle": {
       "type": "string"
@@ -54,6 +49,13 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "mainContent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

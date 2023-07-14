@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "arts",
+  "collectionName": "insights",
   "info": {
-    "singularName": "art",
-    "pluralName": "arts",
-    "displayName": "Art",
+    "singularName": "insight",
+    "pluralName": "insights",
+    "displayName": "Insights",
     "description": ""
   },
   "options": {
