@@ -1,9 +1,24 @@
+// @ts-nocheck
 'use strict';
-
 /**
- * new controller
+ *  [collection-name] controller
  */
-
 const { createCoreController } = require('@strapi/strapi').factories;
-
-module.exports = createCoreController('api::new.new');
+module.exports = createCoreController('api::new.new', ({ strapi }) => ({
+  async find(ctx) {
+    // Calling the default core action
+    const { data, meta } = await super.find(ctx);
+    const query = strapi.query('api::new.new');
+    await Promise.all(
+      data.map(async (item, index) => {
+        const foundItem = await query.findOne({
+          where: {
+            id: item.id,
+          },
+          populate: ['createdBy', 'updatedBy'],
+        });
+      })
+    );
+    return { data, meta };
+  },
+}));

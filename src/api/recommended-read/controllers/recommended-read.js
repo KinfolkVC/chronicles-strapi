@@ -1,14 +1,8 @@
 // @ts-nocheck
 'use strict';
-
 /**
- * recommended-read controller
+ *  [collection-name] controller
  */
-
-// const { createCoreController } = require('@strapi/strapi').factories;
-
-// module.exports = createCoreController('api::recommended-read.recommended-read');
-
 const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::recommended-read.recommended-read', ({ strapi }) => ({
   async find(ctx) {
@@ -23,17 +17,6 @@ module.exports = createCoreController('api::recommended-read.recommended-read', 
           },
           populate: ['createdBy', 'updatedBy'],
         });
-
-        data[index].attributes.createdBy = {
-          id: foundItem.createdBy.id,
-          firstname: foundItem.createdBy.firstname,
-          lastname: foundItem.createdBy.lastname,
-        };
-        data[index].attributes.updatedBy = {
-          id: foundItem.updatedBy.id,
-          firstname: foundItem.updatedBy.firstname,
-          lastname: foundItem.updatedBy.lastname,
-        };
       })
     );
     return { data, meta };
