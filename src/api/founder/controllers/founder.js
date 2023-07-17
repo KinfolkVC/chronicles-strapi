@@ -13,12 +13,27 @@ module.exports = createCoreController('api::founder.founder', ({ strapi }) => ({
       data.map(async (item, index) => {
         const foundItem = await query.findOne({
           where: {
-            id: item.id,
+            slug: item.slug,
           },
-          populate: ['createdBy', 'updatedBy'],
+          populate: ['coverImage', 'createdBy', 'updatedBy'],
         });
       })
     );
     return { data, meta };
   },
+  async findOne(ctx) {
+    // Get the SLUG from the request
+    // use it to fetch data that matches SLUG
+    // Finally, populate response with `createdBy` and `updatedBy`
+    const { slug } = ctx.params;
+    const entity = await strapi.query('api::founder.founder').findOne({
+      where: { slug },
+      populate: ['coverImage', 'createdBy', 'updatedBy'],
+    });
+
+    // Sanitize entity
+    const sanitizedEntity = await this.sanitizeOutput(entity);
+
+    return this.transformResponse(sanitizedEntity)
+  }
 }));
