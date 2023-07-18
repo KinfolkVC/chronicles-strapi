@@ -16,4 +16,10 @@ module.exports = ({ env }) => ({
     },
   },
   // ...
+  // User permissions plugin configuration
+  "users-permissions": {
+    // Other user-permissions configurations
+    // ...
+    populateCreatorFields: true, // populate author/creator fields
+  },
 });
