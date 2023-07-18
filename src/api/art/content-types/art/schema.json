@@ -22,14 +22,15 @@
       "type": "date"
     },
     "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "mainContent": {
       "type": "customField",
@@ -37,19 +38,6 @@
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
-    },
-    "embeddedImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "linkToOriginalArticle": {
-      "type": "string"
     },
     "slug": {
       "type": "uid",

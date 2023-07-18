@@ -32,20 +32,6 @@
         "audios"
       ]
     },
-    "embeddedImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "linkToOriginalArticle": {
-      "type": "string"
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
