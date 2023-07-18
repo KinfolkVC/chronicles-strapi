@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -40,23 +39,9 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "embeddedImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "linkToOriginalArticle": {
-      "type": "string"
     }
   }
 }
