@@ -1,12 +1,32 @@
 module.exports = ({ env }) => ({
   // ...
+  // upload: {
+  //   config: {
+  //     provider: 'cloudinary',
+  //     providerOptions: {
+  //       cloud_name: env('CLOUDINARY_NAME'),
+  //       api_key: env('CLOUDINARY_KEY'),
+  //       api_secret: env('CLOUDINARY_SECRET'),
+  //     },
+  //     actionOptions: {
+  //       upload: {},
+  //       uploadStream: {},
+  //       delete: {},
+  //     },
+  //   },
+  // },
   upload: {
     config: {
-      provider: 'cloudinary',
+      provider: 'aws-s3',
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        accessKeyId: env('AWS_ACCESS_KEY_ID'),
+        secretAccessKey: env('AWS_ACCESS_SECRET'),
+        region: env('AWS_REGION'),
+        params: {
+          ACL: 'private', // <== set ACL to private
+          signedUrlExpires: env('AWS_SIGNED_URL_EXPIRES', 15 * 60),
+          Bucket: env('AWS_BUCKET'),
+        },
       },
       actionOptions: {
         upload: {},
@@ -16,10 +36,5 @@ module.exports = ({ env }) => ({
     },
   },
   // ...
-  // User permissions plugin configuration
-  "users-permissions": {
-    // Other user-permissions configurations
-    // ...
-    populateCreatorFields: true, // populate author/creator fields
   },
 });
