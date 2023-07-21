@@ -7,13 +7,19 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'res.cloudinary.com'],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            'aws-strapi-s3-media-bucket.s3.us-west-2.amazonaws.com',
+          ],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
             'market-assets.strapi.io',
-            'res.cloudinary.com',
+            'aws-strapi-s3-media-bucket.s3.us-west-2.amazonaws.com',
           ],
           upgradeInsecureRequests: null,
         },
