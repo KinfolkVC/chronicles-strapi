@@ -1,51 +1,33 @@
-module.exports = [
+module.exports = ({ env }) => [
   'strapi::errors',
-    {
+  {
     name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
+          'connect-src': ["'self'", 'http:', 'https:'],
           'img-src': [
             "'self'",
             'data:',
             'blob:',
             'market-assets.strapi.io',
-            'aws-strapi-s3-media-bucket.s3.us-west-2.amazonaws.com',
+            'dl.airtable.com',
+            `https://${env('AWS_BUCKET')}.s3.${env('AWS_REGION')}.amazonaws.com/`
           ],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
             'market-assets.strapi.io',
-            'aws-strapi-s3-media-bucket.s3.us-west-2.amazonaws.com',
+            'dl.airtable.com',
+            `https://${env('AWS_BUCKET')}.s3.${env('AWS_REGION')}.amazonaws.com/`
           ],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  // {
-  //   name: 'strapi::security',
-  //   config: {
-  //     contentSecurityPolicy: {
-  //       useDefaults: true,
-  //       directives: {
-  //         'connect-src': ["'self'", 'https:'],
-  //         'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'res.cloudinary.com'],
-  //         'media-src': [
-  //           "'self'",
-  //           'data:',
-  //           'blob:',
-  //           'market-assets.strapi.io',
-  //           'res.cloudinary.com',
-  //         ],
-  //         upgradeInsecureRequests: null,
-  //       },
-  //     },
-  //   },
-  // },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',

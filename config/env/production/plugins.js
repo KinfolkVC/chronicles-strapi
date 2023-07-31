@@ -8,8 +8,7 @@ module.exports = ({ env }) => ({
         secretAccessKey: env('AWS_ACCESS_SECRET'),
         region: env('AWS_REGION'),
         params: {
-          ACL: 'private', // <== set ACL to private
-          signedUrlExpires: env('AWS_SIGNED_URL_EXPIRES', 15 * 60),
+          ACL: env('AWS_ACL', 'public-read'), // <== set ACL to private
           Bucket: env('AWS_BUCKET'),
         },
       },
@@ -17,20 +16,6 @@ module.exports = ({ env }) => ({
         upload: {},
         uploadStream: {},
         delete: {},
-      },
-    },
-  },
-  // ...
-  graphql: {
-    config: {
-      endpoint: '/graphql',
-      shadowCRUD: true,
-      playgroundAlways: true,
-      depthLimit: 10,
-      amountLimit: 100,
-      apolloServer: {
-        tracing: false,
-        introspection: true,
       },
     },
   },
