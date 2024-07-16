@@ -49,6 +49,11 @@
       },
       "customField": "plugin::ckeditor5.CKEditor",
       "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

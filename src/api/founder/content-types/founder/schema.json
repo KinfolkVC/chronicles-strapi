@@ -49,6 +49,11 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
