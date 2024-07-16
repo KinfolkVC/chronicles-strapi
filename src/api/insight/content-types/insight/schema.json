@@ -49,6 +49,25 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "subcategory": {
+      "type": "enumeration",
+      "enum": [
+        "Design",
+        "Engineering",
+        "Finance",
+        "Impact",
+        "Investment",
+        "Law and Regulations",
+        "SDG's",
+        "Technology"
+      ],
+      "required": true
     }
   }
 }
