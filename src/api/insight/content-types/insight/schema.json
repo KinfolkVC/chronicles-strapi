@@ -10,12 +10,11 @@
   "options": {
     "draftAndPublish": true,
     "populateCreatorFields": true
-
   },
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
+      "type": "text",
       "required": true,
       "unique": true
     },

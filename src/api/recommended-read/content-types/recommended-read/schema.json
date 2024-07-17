@@ -14,7 +14,7 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
+      "type": "text",
       "required": true,
       "unique": true
     },
