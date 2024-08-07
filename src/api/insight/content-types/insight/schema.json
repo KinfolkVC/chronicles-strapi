@@ -30,12 +30,7 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "mainContent": {
       "type": "customField",
@@ -68,6 +63,23 @@
         "Technology"
       ],
       "required": true
+    },
+    "pushToSubscribers": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "emailContent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "emailTitle": {
+      "type": "text",
+      "unique": true,
+      "required": false
     }
   }
 }
