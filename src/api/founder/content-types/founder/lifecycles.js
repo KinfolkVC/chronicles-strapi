@@ -1,5 +1,5 @@
-const axios = require("axios");
-const path = require("path");
+// const axios = require("axios");
+// const path = require("path");
 
 module.exports = {
   // async afterCreate(event) {
@@ -37,7 +37,7 @@ module.exports = {
 
         // Send an email to each subscriber
         for (const subscriber of subscribers) {
-          const unsubscribeUrl = `http://localhost:3000/unsubscribe?id=${subscriber.id}`;
+          const unsubscribeUrl = `https://chronicles.kinfolk.vc/unsubscribe?id=${subscriber.id}`;
           // Define email body format
           const subject = `Chronicles: ${result.emailTitle}`;
           // const text = `A new post has been published: ${result.title}. Read more at: blog.com/posts/${result.id}`;
