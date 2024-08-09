@@ -37,7 +37,7 @@ module.exports = {
 
         // Send an email to each subscriber
         for (const subscriber of subscribers) {
-          const unsubscribeUrl = `https://chronicles.kinfolk.vc/unsubscribe?id=${subscriber.id}`;
+          const unsubscribeUrl = `https://kinfolk-blog.netlify.app/unsubscribe?id=${subscriber.id}`;
           // Define email body format
           const subject = `Chronicles: ${result.emailTitle}`;
           // const text = `A new post has been published: ${result.title}. Read more at: blog.com/posts/${result.id}`;
