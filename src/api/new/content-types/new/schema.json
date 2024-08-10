@@ -61,7 +61,8 @@
       "required": true
     },
     "emailTitle": {
-      "type": "text"
+      "type": "text",
+      "unique": true
     },
     "emailContent": {
       "type": "customField",
