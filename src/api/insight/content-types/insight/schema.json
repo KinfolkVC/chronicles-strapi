@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -73,6 +72,16 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "emailTitle": {
+      "type": "text"
+    },
+    "emailContent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
