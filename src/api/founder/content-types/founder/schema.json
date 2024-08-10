@@ -59,18 +59,6 @@
       "type": "boolean",
       "default": false,
       "required": true
-    },
-    "emailContent": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
-    },
-    "emailTitle": {
-      "type": "text",
-      "unique": true,
-      "required": false
     }
   }
 }
