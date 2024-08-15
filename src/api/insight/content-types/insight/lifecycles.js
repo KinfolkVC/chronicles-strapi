@@ -40,7 +40,7 @@ module.exports = {
           const unsubscribeUrl = `https://kinfolk-blog.netlify.app/unsubscribe?id=${subscriber.id}`;
           // Define email body format
           const subject = `Chronicles: ${result.emailTitle}`;
-          // const text = `A new post has been published: ${result.title}. Read more at: blog.com/posts/${result.id}`;
+          // const text = `A new post has been published: ${result.emailTitle}. Read more at: blog.com/posts/${result.id}`;
           // <img src="cid:${imageCid}" style="width: 100%; height: auto; max-width: 100%; padding-top: 1rem; border-radius: 30px;" alt="Image">
           const html = `
             <html>
@@ -55,7 +55,7 @@ module.exports = {
                 </style>
               </head>
               <body>
-                <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem;">${result.title}</h1>
+                <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem;">${result.emailTitle}</h1>
                 <div class="mainContent">${result.emailContent}</div>
                 <p style="margin-top: 0.5rem;">See more articles <a style="font-style: italics;" href="https://chronicles.kinfolk.vc/" target="_blank">here</a></p>
                 <p>If you no longer wish to receive these emails, you can <a href="${unsubscribeUrl}">unsubscribe here</a>.</p>
