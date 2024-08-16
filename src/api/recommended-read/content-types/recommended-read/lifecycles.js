@@ -57,7 +57,7 @@ module.exports = {
               <body>
                 <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem;">${result.emailTitle}</h1>
                 <div class="mainContent">${result.emailContent}</div>
-                <p style="margin-top: 0.5rem;">See more articles <a style="font-style: italics;" href="https://chronicles.kinfolk.vc/" target="_blank">here</a></p>
+                <p style="margin-top: 0.5rem; font-size:16px;">Read more articles from Chronicles <a style="font-style: italics;" href="https://chronicles.kinfolk.vc/" target="_blank">here</a></p>
                 <p>If you no longer wish to receive these emails, you can <a href="${unsubscribeUrl}">unsubscribe here</a>.</p>
               </body>
             </html>
