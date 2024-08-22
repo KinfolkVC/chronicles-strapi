@@ -40,7 +40,7 @@ module.exports = {
           const unsubscribeUrl = `https://kinfolk-blog.netlify.app/unsubscribe?id=${subscriber.id}`;
           // Define email body format
           const subject = `Chronicles: ${result.emailTitle}`;
-          // const text = `A new post has been published: ${result.title}. Read more at: blog.com/posts/${result.id}`;
+          // const text = `A new post has been published: ${result.emailTitle}. Read more at: blog.com/posts/${result.id}`;
           // <img src="cid:${imageCid}" style="width: 100%; height: auto; max-width: 100%; padding-top: 1rem; border-radius: 30px;" alt="Image">
           const html = `
             <html>
@@ -51,14 +51,26 @@ module.exports = {
                 p {color: black;}
                 .mainContent {font-size: 16px; font-weight: 400}
                 img {width:100%; height: auto; max-width: 99%; border-radius: 10px;}
-                .emoji img {width:21px!important; height: 21px!important;}
+                .emoji img {width: 21px!important; height: 21px!important;}
+                .banner {background-color: black; width: 100%; height: 100px; display: flex; margin-bottom: 40px;}
+                .banner img {margin: auto auto; width: auto!important;}
+                .cta-container {margin-top: 50px; display: flex;}
+                .cta-container button {background-color: black; color: white; padding: 16px 28px; border: none; margin: 0 auto; margin-bottom: 20px;}
                 </style>
               </head>
               <body>
-                <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem;">${result.title}</h1>
+                <div class="banner">
+                  <img src="https://res.cloudinary.com/kinfolk-cloudinary/image/upload/v1724306583/kinfolkwhite_jjhcfs.png" alt="kinfolk-logo" style="width: 50px!important; height: 50px;" />
+                </div>
+                <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem; text-align: center;">${result.emailTitle}</h1>
                 <div class="mainContent">${result.emailContent}</div>
-                <p style="margin-top: 0.5rem;">See more articles <a style="font-style: italics;" href="https://chronicles.kinfolk.vc/" target="_blank">here</a></p>
-                <p>If you no longer wish to receive these emails, you can <a href="${unsubscribeUrl}">unsubscribe here</a>.</p>
+                <div class="cta-container">
+                  <button>
+                    <a href="${result.emailCTAUrl}" target="_blank" style="text-decoration:none;color:inherit;">READ MORE</a>
+                  </button>
+                </div>
+                <p style="margin-top: 0.5rem; font-size:16px; text-align: center;">View all stories from Kinfolk Chronicles <a style="font-style: italics;" href="https://chronicles.kinfolk.vc/" target="_blank">here</a></p>
+                <p style="text-align: center;">If you no longer wish to receive these emails, <a href="${unsubscribeUrl}">unsubscribe here</a>.</p>
               </body>
             </html>
           `;

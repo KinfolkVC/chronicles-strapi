@@ -65,6 +65,9 @@
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "emailCTAUrl": {
+      "type": "text"
     }
   }
 }
