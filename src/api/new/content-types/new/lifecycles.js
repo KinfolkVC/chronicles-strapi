@@ -62,7 +62,7 @@ module.exports = {
                 <div class="banner">
                   <img src="https://res.cloudinary.com/kinfolk-cloudinary/image/upload/v1724306583/kinfolkwhite_jjhcfs.png" alt="kinfolk-logo" style="width: 50px!important; height: 50px;" />
                 </div>
-                <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem; text-align: center;">${result.emailTitle}</h1>
+                <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem;">${result.emailTitle}</h1>
                 <div class="mainContent">${result.emailContent}</div>
                 <div class="cta-container">
                   <button>
