@@ -55,7 +55,7 @@ module.exports = {
                 .banner {background-color: black; width: 100%; height: 100px; display: flex; margin-bottom: 40px;}
                 .banner img {margin: auto auto; width: auto!important;}
                 .cta-container {margin-top: 50px; display: flex;}
-                .cta-container button {background-color: black; color: white; padding: 16px 28px; border: none; margin: 0 auto; margin-bottom: 20px;}
+                .cta-container a {background-color: black; color: white; padding: 16px 28px; border: none; margin: 0 auto; margin-bottom: 20px;}
                 </style>
               </head>
               <body>
@@ -65,9 +65,7 @@ module.exports = {
                 <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 1rem;">${result.emailTitle}</h1>
                 <div class="mainContent">${result.emailContent}</div>
                 <div class="cta-container">
-                  <button>
-                    <a href="${result.emailCTAUrl}" target="_blank" style="text-decoration:none;color:inherit;">READ MORE</a>
-                  </button>
+                  <a href="${result.emailCTAUrl}" target="_blank" style="text-decoration:none;color:white;">READ MORE</a>
                 </div>
                 <p style="margin-top: 0.5rem; font-size:16px; text-align: center;">View all stories from Kinfolk Chronicles <a style="font-style: italics;" href="https://chronicles.kinfolk.vc/" target="_blank">here</a></p>
                 <p style="text-align: center;">If you no longer wish to receive these emails, <a href="${unsubscribeUrl}">unsubscribe here</a>.</p>
