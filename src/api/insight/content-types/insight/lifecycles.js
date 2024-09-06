@@ -47,6 +47,7 @@ module.exports = {
                 body {font-weight: 400; width: 100%;}
                 h1, h2, h3, h4, h5, h6 {color: black;}
                 p {color: black;}
+                ol, ul {padding-left: 1rem;}
                 .mainContent {font-size: 16px; font-weight: 400}
                 img {width:100%; height: auto; max-width: 99%; border-radius: 10px;}
                 .emoji img {width: 21px!important; height: 21px!important;}
