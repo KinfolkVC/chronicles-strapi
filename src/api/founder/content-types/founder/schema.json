@@ -73,6 +73,10 @@
     },
     "emailCTAUrl": {
       "type": "text"
+    },
+    "spotifyUrl": {
+      "type": "string",
+      "unique": true
     }
   }
 }
