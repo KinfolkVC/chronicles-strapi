@@ -27,7 +27,7 @@ module.exports = createCoreController(
               email: item.email,
             },
           });
-          console.log(foundItem, 'founddd');
+          // console.log(foundItem, 'founddd');
         })
       );
       return { data, meta };
@@ -55,7 +55,7 @@ module.exports = createCoreController(
     },
     async delete(ctx) {
       const { id } = ctx.params;
-      console.log(id, "controllers");
+      // console.log(id, "controllers");
 
       try {
         // Delete the subscriber with the given ID
