@@ -1,6 +1,6 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npm ci --omit=dev && npm run build"
+buildCommand = "npm ci --omit=dev --legacy-peer-deps && npm run build"
 
 [deploy]
 startCommand = "npm run start"
