@@ -1,8 +1,5 @@
-[phases.setup]
-nixPkgs = ["nodejs_18"]
-
 [phases.install]
-cmds = ["npm ci --omit=dev --legacy-peer-deps"]
+cmds = ["npm ci --omit=dev"]
 
 [phases.build]
 cmds = ["npm run build"]
