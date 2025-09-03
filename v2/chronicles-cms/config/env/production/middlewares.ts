@@ -1,5 +1,4 @@
 export default ({ env }) => [
-  'strapi::logger',
   'strapi::errors',
   {
     name: 'strapi::security',
@@ -7,7 +6,8 @@ export default ({ env }) => [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': [ "'self'", 'http:', 'https:' ],
+          'script-src': [ 'https://cdn.ckeditor.com' ],
+          'connect-src': [ "'self'", 'http:', 'https:', 'https://proxy-event.ckeditor.com' ],
           'img-src': [
             "'self'",
             'data:',
@@ -31,6 +31,7 @@ export default ({ env }) => [
   },
   'strapi::cors',
   'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',

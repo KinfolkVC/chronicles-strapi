@@ -4,14 +4,12 @@ export default ({ env }) => ({
     config: {
       provider: "aws-s3",
       providerOptions: {
-        s3Options: {
-          accessKeyId: env("AWS_ACCESS_KEY_ID"),
-          secretAccessKey: env("AWS_ACCESS_SECRET"),
-          region: env("AWS_REGION"),
-          params: {
-            ACL: env("AWS_ACL", "public-read"), // <== set ACL to private
-            Bucket: env("AWS_BUCKET"),
-          },
+        accessKeyId: env("AWS_ACCESS_KEY_ID"),
+        secretAccessKey: env("AWS_ACCESS_SECRET"),
+        region: env("AWS_REGION"),
+        params: {
+          ACL: env("AWS_ACL", "public-read"), // <== set ACL to private
+          Bucket: env("AWS_BUCKET"),
         },
       },
       actionOptions: {
@@ -21,6 +19,7 @@ export default ({ env }) => ({
       },
     },
   },
+  // email plugin configuration
   email: {
     config: {
       provider: "sendgrid", // For community providers pass the full package name (e.g. provider: 'strapi-provider-email-mandrill')
@@ -33,6 +32,7 @@ export default ({ env }) => ({
       },
     },
   },
+  // User permissions plugin configuration
   "users-permissions": {
     // Other user-permissions configurations
     // ...

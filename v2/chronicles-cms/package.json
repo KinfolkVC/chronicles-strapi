@@ -2,13 +2,14 @@
   "name": "chronicles-cms",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Chronicles CMS",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
+    "clean": "rm -rf node_modules package-lock.json",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
@@ -16,6 +17,7 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^6.0.3",
     "@strapi/plugin-cloud": "5.23.1",
     "@strapi/plugin-users-permissions": "5.23.1",
     "@strapi/strapi": "5.23.1",
