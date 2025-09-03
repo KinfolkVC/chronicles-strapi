@@ -1,40 +1,53 @@
 {
-  "name": "chronicles-backnd",
+  "name": "chronicles-cms",
+  "version": "0.2.0",
   "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Chronicles CMS",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
     "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "clean": "rm -rf node_modules package-lock.json",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
     "strapi": "strapi",
-    "clean": "rm -rf node_modules package-lock.json"
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@_sh/strapi-plugin-ckeditor": "^2.0.4",
-    "@ckeditor/ckeditor5-markdown-gfm": "^38.1.1",
-    "@strapi/plugin-email": "^4.25.5",
-    "@strapi/plugin-graphql": "^4.11.5",
-    "@strapi/plugin-i18n": "4.11.5",
-    "@strapi/plugin-seo": "^1.9.2",
-    "@strapi/plugin-users-permissions": "4.11.5",
-    "@strapi/provider-email-sendgrid": "^4.25.5",
-    "@strapi/provider-upload-aws-s3": "^4.11.7",
-    "@strapi/provider-upload-cloudinary": "^4.11.5",
-    "@strapi/strapi": "4.11.5",
-    "axios": "^1.7.2",
+    "@_sh/strapi-plugin-ckeditor": "^6.0.3",
+    "@strapi/plugin-cloud": "5.23.1",
+    "@strapi/plugin-seo": "^2.0.8",
+    "@strapi/plugin-users-permissions": "5.23.1",
+    "@strapi/provider-email-sendgrid": "^5.23.1",
+    "@strapi/provider-upload-aws-s3": "^5.23.1",
+    "@strapi/provider-upload-cloudinary": "^5.23.1",
+    "@strapi/strapi": "5.23.1",
+    "axios": "^1.11.0",
+    "better-sqlite3": "11.3.0",
+    "fs-extra": "^10.0.0",
     "html-to-text": "^9.0.5",
-    "pg": "8.8.0"
+    "mime-types": "^2.1.27",
+    "pg": "^8.16.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "44b0820d-ca1c-4df9-9b92-4e1c28936972"
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
   },
   "engines": {
-    "node": "18.x.x",
+    "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "4cf8edb9-c927-485f-b77c-66b165a8c81e",
+    "installId": "8bc9f77586dc855556938ace440c5599758718a1bc178d385238fb122ce3494b"
+  }
 }
