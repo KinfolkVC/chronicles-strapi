@@ -7,6 +7,7 @@ export default ({ env }) => [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          'script-src': [ "'self'", 'https://cdn.ckeditor.com' ],
           'connect-src': [ "'self'", 'http:', 'https:' ],
           'img-src': [
             "'self'",
