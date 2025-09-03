@@ -7,7 +7,12 @@ export default ({ env }) => [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'script-src': [ "'self'", 'https://cdn.ckeditor.com' ],
+          'script-src': [
+            "'self'",                     // allow scripts from your domain
+            "'unsafe-inline'",            // allow inline scripts (required by Strapi admin)
+            "'strict-dynamic'",           // allow dynamically loaded scripts
+            'https://cdn.ckeditor.com'
+          ],
           'connect-src': [ "'self'", 'http:', 'https:' ],
           'img-src': [
             "'self'",
