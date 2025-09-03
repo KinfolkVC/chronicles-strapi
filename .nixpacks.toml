@@ -1,11 +1,14 @@
-[phases.setup]
-nixPkgs = ["nodejs_20"]
+[build]
+builder = "NIXPACKS"
 
-[phases.install]
-cmds = ["npm install"]
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["nodejs-20_x"]
 
-[phases.build]
+[build.nixpacksPlan.phases.install]
+cmds = ["npm ci --omit=dev"]
+
+[build.nixpacksPlan.phases.build]
 cmds = ["npm run build"]
 
-[start]
-cmd = "npm run start"
+[deploy]
+startCommand = "npm run start"
