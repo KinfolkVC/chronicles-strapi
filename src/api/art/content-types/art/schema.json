@@ -35,10 +35,11 @@
     },
     "mainContent": {
       "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
       "options": {
-        "preset": "toolbarBaloon"
+        "preset": "defaultHtml"
       },
-      "customField": "plugin::ckeditor5.CKEditor"
+      "required": true
     },
     "slug": {
       "type": "uid",

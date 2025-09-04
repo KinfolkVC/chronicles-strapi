@@ -38,4 +38,9 @@ export default ({ env }) => ({
     // ...
     populateCreatorFields: true, // populate author/creator fields
   },
+  'content-manager': {
+    config: {
+      preview: false
+    },
+  },
 });
