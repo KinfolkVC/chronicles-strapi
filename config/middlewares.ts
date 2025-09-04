@@ -8,10 +8,9 @@ export default ({ env }) => [
         useDefaults: true,
         directives: {
           'script-src': [
-            "'self'",                     // allow scripts from your domain
-            "'unsafe-inline'",            // allow inline scripts (required by Strapi admin)
-            "'strict-dynamic'",           // allow dynamically loaded scripts
-            'https://cdn.ckeditor.com'
+            "'self'",
+            "'unsafe-inline'",
+            'https://cdn.ckeditor.com',
           ],
           'connect-src': [ "'self'", 'http:', 'https:' ],
           'img-src': [
@@ -42,4 +41,4 @@ export default ({ env }) => [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-];
+]
