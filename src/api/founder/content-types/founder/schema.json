@@ -39,10 +39,10 @@
     },
     "mainContent": {
       "type": "customField",
-      "options": {
-        "preset": "toolbarBaloon"
-      },
       "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      },
       "required": true
     },
     "slug": {
@@ -66,10 +66,10 @@
     },
     "emailContent": {
       "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
       "options": {
-        "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
+        "preset": "defaultHtml"
+      }
     },
     "emailCTAUrl": {
       "type": "text"

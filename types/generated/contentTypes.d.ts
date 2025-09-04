@@ -397,10 +397,11 @@ export interface ApiArtArt extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::art.art'> &
       Schema.Attribute.Private;
     mainContent: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     publishedAt: Schema.Attribute.DateTime;
@@ -436,7 +437,7 @@ export interface ApiFounderFounder extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     emailCTAUrl: Schema.Attribute.Text;
@@ -455,7 +456,7 @@ export interface ApiFounderFounder extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     publishedAt: Schema.Attribute.DateTime;
@@ -469,38 +470,6 @@ export interface ApiFounderFounder extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
-  };
-}
-
-export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
-  collectionName: 'globals';
-  info: {
-    description: 'Define global settings';
-    displayName: 'Global';
-    pluralName: 'globals';
-    singularName: 'global';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
-    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::global.global'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    siteName: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -529,7 +498,7 @@ export interface ApiInsightInsight extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     emailCTAUrl: Schema.Attribute.Text;
@@ -548,7 +517,7 @@ export interface ApiInsightInsight extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     publishedAt: Schema.Attribute.DateTime;
@@ -588,7 +557,6 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     coverImage: Schema.Attribute.Media<
@@ -596,14 +564,15 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     date: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     emailContent: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     emailCTAUrl: Schema.Attribute.Text;
@@ -619,7 +588,7 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     publishedAt: Schema.Attribute.DateTime;
@@ -632,7 +601,8 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -662,7 +632,7 @@ export interface ApiRecommendedReadRecommendedRead
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     emailCTAUrl: Schema.Attribute.Text;
@@ -681,7 +651,7 @@ export interface ApiRecommendedReadRecommendedRead
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbarBaloon';
+          preset: 'defaultHtml';
         }
       >;
     publishedAt: Schema.Attribute.DateTime;
@@ -1240,7 +1210,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::art.art': ApiArtArt;
       'api::founder.founder': ApiFounderFounder;
-      'api::global.global': ApiGlobalGlobal;
       'api::insight.insight': ApiInsightInsight;
       'api::new.new': ApiNewNew;
       'api::recommended-read.recommended-read': ApiRecommendedReadRecommendedRead;
