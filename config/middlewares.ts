@@ -1,6 +1,8 @@
 export default ({ env }) => [
   'strapi::logger',
   'strapi::errors',
+  'strapi::cors',
+  'strapi::poweredBy',
   {
     name: 'strapi::security',
     config: {
@@ -10,16 +12,21 @@ export default ({ env }) => [
           'script-src': [
             "'self'",
             "'unsafe-inline'",
+            "'unsafe-eval'",
             'https://cdn.ckeditor.com',
+            'https://proxy-event.ckeditor.com'
           ],
           'connect-src': [ "'self'", 'http:', 'https:' ],
+          'style-src': [ "'self'", "'unsafe-inline'", 'https://cdn.ckeditor.com' ],
           'img-src': [
             "'self'",
             'data:',
             'blob:',
             'market-assets.strapi.io',
             'dl.airtable.com',
-            `https://${ env('AWS_BUCKET') }.s3.${ env('AWS_REGION') }.amazonaws.com/`
+            `https://${ env('AWS_BUCKET') }.s3.${ env('AWS_REGION') }.amazonaws.com/`,
+            'https://cdn.ckeditor.com',
+            'https://strapi.io',
           ],
           'media-src': [
             "'self'",
@@ -27,15 +34,14 @@ export default ({ env }) => [
             'blob:',
             'market-assets.strapi.io',
             'dl.airtable.com',
-            `https://${ env('AWS_BUCKET') }.s3.${ env('AWS_REGION') }.amazonaws.com/`
+            `https://${ env('AWS_BUCKET') }.s3.${ env('AWS_REGION') }.amazonaws.com/`,
+            'https://cdn.ckeditor.com',
           ],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  'strapi::cors',
-  'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
   'strapi::session',

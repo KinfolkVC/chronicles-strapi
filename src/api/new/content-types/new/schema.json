@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -44,21 +43,21 @@
     },
     "mainContent": {
       "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
       "options": {
         "preset": "toolbarBaloon"
       },
-      "customField": "plugin::ckeditor5.CKEditor",
       "required": true
     },
     "featured": {
       "type": "boolean",
-      "default": false,
-      "required": true
+      "required": true,
+      "default": false
     },
     "pushToSubscribers": {
       "type": "boolean",
-      "default": false,
-      "required": true
+      "required": true,
+      "default": false
     },
     "emailTitle": {
       "type": "text",
@@ -66,10 +65,10 @@
     },
     "emailContent": {
       "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
       "options": {
         "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
+      }
     },
     "emailCTAUrl": {
       "type": "text"
@@ -77,6 +76,14 @@
     "spotifyUrl": {
       "type": "string",
       "unique": true
+    },
+    "mainContentt": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true
     }
   }
 }

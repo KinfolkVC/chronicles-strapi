@@ -588,7 +588,6 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     coverImage: Schema.Attribute.Media<
@@ -596,7 +595,8 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     date: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     emailContent: Schema.Attribute.RichText &
@@ -622,6 +622,14 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
           preset: 'toolbarBaloon';
         }
       >;
+    mainContentt: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     publishedAt: Schema.Attribute.DateTime;
     pushToSubscribers: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
@@ -632,7 +640,8 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
