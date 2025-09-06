@@ -24,10 +24,19 @@ export default factories.createCoreController(
               email: item.email,
             },
           });
-          // console.log(foundItem, 'founddd');
         })
       );
       return { data, meta };
+    },
+    async findOne(ctx) {
+      // Get the ID from the request
+      // use it to fetch data that matches subscriber ID
+      const { id } = ctx.params;
+      const data = await strapi.query('api::subscriber.subscriber').findOne({
+        where: { id },
+      });
+
+      return { ...data }
     },
     async create(ctx) {
       const { email } = ctx.request.body;
@@ -52,7 +61,6 @@ export default factories.createCoreController(
     },
     async delete(ctx) {
       const { id } = ctx.params;
-      // console.log(id, "controllers");
 
       try {
         // Delete the subscriber with the given ID

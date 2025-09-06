@@ -547,6 +547,50 @@ export interface ApiInsightInsight extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNewSubscriberEmailTemplateNewSubscriberEmailTemplate
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'new_subscriber_email_templates';
+  info: {
+    displayName: 'NewSubscriberEmailTemplate';
+    pluralName: 'new-subscriber-email-templates';
+    singularName: 'new-subscriber-email-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    activeTemplate: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-subscriber-email-template.new-subscriber-email-template'
+    > &
+      Schema.Attribute.Private;
+    newSubscriberEmailContent: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    newSubscriberEmailCTALabel: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    newSubscriberEmailCTAUrl: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    newSubscriberEmailTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewNew extends Struct.CollectionTypeSchema {
   collectionName: 'news';
   info: {
@@ -1210,6 +1254,7 @@ declare module '@strapi/strapi' {
       'api::art.art': ApiArtArt;
       'api::founder.founder': ApiFounderFounder;
       'api::insight.insight': ApiInsightInsight;
+      'api::new-subscriber-email-template.new-subscriber-email-template': ApiNewSubscriberEmailTemplateNewSubscriberEmailTemplate;
       'api::new.new': ApiNewNew;
       'api::recommended-read.recommended-read': ApiRecommendedReadRecommendedRead;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
